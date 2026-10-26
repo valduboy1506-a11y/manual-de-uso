@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@font-face { font-family: 'Instrument Sans:Bold'; src: url('https://static.figma.com/font/InstrumentSans_wdth_wght__1') format('woff2'); font-style: normal; font-weight: 700; }
+@font-face { font-family: 'Inter:Black'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 900; }
+@font-face { font-family: 'Inter:Bold'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 700; }
+@font-face { font-family: 'Inter:Semi Bold'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 600; }
+@font-face { font-family: 'Istok Web:Bold'; src: url('https://static.figma.com/font/IstokWeb-Bold_1') format('woff2'); font-style: normal; font-weight: 700; }
+@font-face { font-family: 'Sora:Bold'; src: url('https://static.figma.com/font/Sora_wght__1') format('woff2'); font-style: normal; font-weight: 700; }
+@font-face { font-family: 'Sora:ExtraBold'; src: url('https://static.figma.com/font/Sora_wght__1') format('woff2'); font-style: normal; font-weight: 800; }
+@font-face { font-family: 'Sora:SemiBold'; src: url('https://static.figma.com/font/Sora_wght__1') format('woff2'); font-style: normal; font-weight: 600; }
+
+html, body, #root { margin: 0; min-height: 100%; background: #f8f5f0; }
+.page { width: 100%; height: min(540vw, 13500px); overflow: hidden; }
+.canvas { transform: scale(min(1, calc(100vw / 2500))); transform-origin: top left; }
+@media (min-width: 2500px) { .canvas { margin-inline: auto; } }

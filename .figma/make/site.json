@@ -1,0 +1,10 @@
+{
+  "description": "Permite cambiar el framework de un proyecto a Svelte para crear y gestionar aplicaciones web modernas con mayor facilidad.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
