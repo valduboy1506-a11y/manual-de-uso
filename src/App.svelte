@@ -7,7 +7,7 @@ const imgSettings = `${assetPathPrefix}/ced83.svg`;
 const imgUsers = `${assetPathPrefix}/1abf0.svg`;
 const imgUserCheck = `${assetPathPrefix}/c0e08.svg`;
 const imgSize48 = `${assetPathPrefix}/c1f45.svg`;
-const imgGeminiGeneratedImage4Cv6G94Cv6G94Cv6RemovebgPreview1 = `${assetPathPrefix}/b1f5a.png`;
+const imgGeminiGeneratedImage4Cv6G94Cv6G94Cv6RemovebgPreview1 = `${assetPathPrefix}/corimon-pinturas-logo.png`;
 const imgRegistrationFormPreview = `${assetPathPrefix}/d3b0b.png`;
 const imgScreenshot202609131917351 = `${assetPathPrefix}/5eb53.png`;
 const imgProblemDefinitionForm = `${assetPathPrefix}/4409d.png`;
@@ -54,9 +54,11 @@ const imgArrow7 = `${assetPathPrefix}/8d9a7.svg`;
 const imgArrow2 = `${assetPathPrefix}/a4c9d.svg`;
 const imgArrow4 = `${assetPathPrefix}/bbe74.svg`;
 const imgArrow6 = `${assetPathPrefix}/ab3b1.svg`;
+let extraCauses = 0;
 </script>
 
 <div class="page">
+<div class="manual-stage">
 <div class="canvas bg-[#f8f5f0] h-[13500px] overflow-clip relative w-[2500px]" data-node-id="1:83" data-name="Desktop - 1">
       <div class="absolute h-[177.5px] left-[-210px] top-[10524px] w-[1674.5px]" data-node-id="1:84">
         <div class="absolute inset-[0_-1.43%_-13.52%_0]">
@@ -597,4 +599,59 @@ const imgArrow6 = `${assetPathPrefix}/ab3b1.svg`;
       </p>
       <p class="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold h-[488px] leading-[normal] left-[334.5px] not-italic text-[35px] text-black text-center top-[12985px] w-[497px]" data-node-id="1:223"> El usuario debe redactar de forma clara y precisa el problema, no conformidad o desviación detectada</p>
     </div>
+</div>
+
+<section class="manual-extension" aria-labelledby="analysis-title">
+  <div class="extension-heading">
+    <span>MÓDULO 5</span>
+    <p id="analysis-title">ANÁLISIS DE CAUSA Y PLAN DE ACCIÓN</p>
+    <p class="extension-intro">Complete el análisis en orden. Registre únicamente causas comprobables y agregue filas adicionales solo cuando sean necesarias.</p>
+  </div>
+
+  <article class="manual-card">
+    <div class="step-copy">
+      <span class="step-number">01</span>
+      <div>
+        <p class="step-title">Llenado de los 5 porqués</p>
+        <p>Describa primero la causa potencial. Luego formule “¿Por qué ocurrió?” y registre su respuesta. Use cada respuesta como punto de partida para el siguiente porqué, hasta identificar la causa raíz.</p>
+      </div>
+    </div>
+    <img src="/assets/manual-5-porques.png" alt="Formulario de análisis de los cinco porqués con causa potencial, preguntas y respuestas" />
+    <div class="tip"><strong>Importante:</strong> no es obligatorio completar los cinco niveles si la causa raíz ya fue identificada y sustentada.</div>
+  </article>
+
+  <article class="manual-card">
+    <div class="step-copy">
+      <span class="step-number">02</span>
+      <div>
+        <p class="step-title">Agregar una causa adicional</p>
+        <p>Seleccione <strong>Agregar causa</strong> únicamente cuando exista otra línea de análisis independiente. El sistema desplegará una nueva lista con sus cinco preguntas y respuestas.</p>
+      </div>
+    </div>
+    <img src="/assets/manual-agregar-causa.png" alt="Botón Agregar causa debajo de una nueva fila del análisis de cinco porqués" />
+    <div class="cause-demo">
+      <button type="button" on:click={() => extraCauses += 1}>＋ Agregar causa</button>
+      {#each Array(extraCauses) as _, index}
+        <div class="cause-row"><strong>Causa adicional {index + 1}</strong><span>Nueva secuencia de 5 porqués lista para completar</span></div>
+      {/each}
+    </div>
+  </article>
+
+  <article class="manual-card">
+    <div class="step-copy">
+      <span class="step-number">03</span>
+      <div>
+        <p class="step-title">Plan de acción</p>
+        <p>Registre cada acción correctiva, su fecha de compromiso y el responsable. Indique cómo se verificará la eficacia, la fecha de revisión y quién realizará la validación.</p>
+      </div>
+    </div>
+    <img src="/assets/manual-plan-accion.png" alt="Formulario del plan de acción con acción correctiva, responsables, fechas y verificación de eficacia" />
+    <div class="action-grid">
+      <span><strong>1.</strong> Acción concreta y medible</span>
+      <span><strong>2.</strong> Responsable y fecha</span>
+      <span><strong>3.</strong> Verificación de eficacia</span>
+      <span><strong>4.</strong> Envío del formulario completo</span>
+    </div>
+  </article>
+</section>
 </div>

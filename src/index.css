@@ -10,6 +10,121 @@
 @font-face { font-family: 'Sora:SemiBold'; src: url('https://static.figma.com/font/Sora_wght__1') format('woff2'); font-style: normal; font-weight: 600; }
 
 html, body, #root { margin: 0; min-height: 100%; background: #f8f5f0; }
-.page { width: 100%; height: min(540vw, 13500px); overflow: hidden; }
+.page {
+  --wine: #8b1a2a;
+  --wine-dark: #710e0e;
+  --paper: #f8f5f0;
+  --ink: #231f20;
+  width: 100%;
+  overflow: hidden;
+}
+.manual-stage { width: 100%; height: min(540vw, 13500px); overflow: hidden; }
 .canvas { transform: scale(min(1, calc(100vw / 2500))); transform-origin: top left; }
 @media (min-width: 2500px) { .canvas { margin-inline: auto; } }
+
+.manual-extension {
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(2rem, 6vw, 6rem) clamp(1rem, 5vw, 5rem);
+}
+.extension-heading, .manual-card {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+.extension-heading {
+  border-left: 0.5rem solid var(--wine);
+  padding-left: clamp(1rem, 3vw, 2rem);
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+.extension-heading > span {
+  display: inline-block;
+  border-radius: 999px;
+  background: var(--wine);
+  color: white;
+  padding: 0.45rem 1rem;
+  font: 700 0.8rem/1 'Sora:Bold', sans-serif;
+  letter-spacing: 0.08em;
+}
+.extension-heading > p:first-of-type {
+  margin: 1rem 0 0.75rem;
+  color: var(--wine);
+  font: 800 clamp(1.6rem, 4vw, 3rem)/1.1 'Sora:ExtraBold', sans-serif;
+}
+.extension-intro {
+  max-width: 70ch;
+  margin: 0;
+  font: 600 clamp(1rem, 1.8vw, 1.2rem)/1.6 'Sora:SemiBold', sans-serif;
+}
+.manual-card {
+  box-sizing: border-box;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  border-top: 0.65rem solid var(--wine);
+  border-radius: 1rem;
+  background: white;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 1rem 2.5rem rgb(74 35 35 / 12%);
+}
+.step-copy { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+.step-copy p { margin: 0; font: 600 clamp(0.95rem, 1.6vw, 1.1rem)/1.6 'Sora:SemiBold', sans-serif; }
+.step-copy .step-title { margin-bottom: 0.4rem; color: var(--wine); font: 800 clamp(1.25rem, 3vw, 2rem)/1.2 'Sora:ExtraBold', sans-serif; }
+.step-number {
+  flex: 0 0 auto;
+  border-radius: 0.7rem;
+  background: var(--wine);
+  color: white;
+  padding: 0.75rem;
+  font: 800 1rem/1 'Sora:ExtraBold', sans-serif;
+}
+.manual-card > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e6ddd5;
+  border-radius: 0.75rem;
+  background: white;
+}
+.tip, .cause-demo, .action-grid { margin-top: 1.25rem; }
+.tip {
+  border-left: 0.35rem solid #e51d1d;
+  background: #fff5f3;
+  padding: 1rem;
+  font: 600 0.95rem/1.5 'Sora:SemiBold', sans-serif;
+}
+.cause-demo button {
+  cursor: pointer;
+  border: 1px dashed var(--wine);
+  border-radius: 0.65rem;
+  background: white;
+  color: var(--wine);
+  padding: 0.75rem 1rem;
+  font: 700 0.9rem/1 'Sora:Bold', sans-serif;
+}
+.cause-demo button:hover, .cause-demo button:focus-visible { background: var(--wine); color: white; }
+.cause-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  border-radius: 0.6rem;
+  background: #f4eeea;
+  padding: 1rem;
+  font: 600 0.9rem/1.4 'Sora:SemiBold', sans-serif;
+}
+.action-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+.action-grid span {
+  border-radius: 0.65rem;
+  background: var(--wine);
+  color: white;
+  padding: 1rem;
+  font: 600 0.9rem/1.4 'Sora:SemiBold', sans-serif;
+}
+@media (max-width: 700px) {
+  .action-grid { grid-template-columns: 1fr 1fr; }
+  .cause-row { flex-direction: column; }
+}
+@media (max-width: 420px) {
+  .manual-extension { padding-inline: 0.75rem; }
+  .manual-card { border-radius: 0.7rem; padding: 0.85rem; }
+  .step-copy { flex-direction: column; }
+  .action-grid { grid-template-columns: 1fr; }
+}
